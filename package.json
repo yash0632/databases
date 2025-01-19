@@ -1,0 +1,21 @@
+{
+  "name": "databases",
+  "module": "index.ts",
+  "type": "module",
+  "scripts":{
+    "start":"tsc -b && node dist/index.js"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/pg": "^8.11.10"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@types/express": "^5.0.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "pg": "^8.13.1"
+  }
+}
