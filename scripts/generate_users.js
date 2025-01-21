@@ -3,11 +3,11 @@ import fs from 'fs'
 import path from 'path';
 import {v4 as uuid} from 'uuid';
 
-let total_num = 1_000_000;
+let total_num = 1_00_000;
 const filePath = path.join(process.cwd(),'scripts','users.csv');
 const writeStream = fs.createWriteStream(filePath);
 
-writeStream.write(`name,email\n`);
+//writeStream.write(`name,email,jobtitle\n`);
 
 for(let i = 0;i < total_num;i++){
     const randomName = faker.person.fullName();
@@ -17,9 +17,10 @@ for(let i = 0;i < total_num;i++){
     randomEmailArray.splice(1,0,uuid({offset:10}).toString(),"@");
     randomEmail = randomEmailArray.join("");
     //console.log(randomEmail);
+    const jobTitle = faker.person.jobTitle() ;
     
 
-    writeStream.write(`${randomName},${randomEmail}\n`);
+    writeStream.write(`${randomName},${randomEmail},${jobTitle}\n`);
 
 }
 
