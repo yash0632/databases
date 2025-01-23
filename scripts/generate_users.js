@@ -3,7 +3,7 @@ import fs from 'fs'
 import path from 'path';
 import {v4 as uuid} from 'uuid';
 
-let total_num = 1_00_000;
+let total_num = 1;
 const filePath = path.join(process.cwd(),'scripts','users.csv');
 const writeStream = fs.createWriteStream(filePath);
 
